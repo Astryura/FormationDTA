@@ -16,8 +16,8 @@ public class OperateursApp {
 		System.out.println(new BigDecimal(nb1).add(new BigDecimal(nb2)));
 		System.out.println(new BigDecimal(nb1).subtract(new BigDecimal(nb2)));
 		System.out.println(new BigDecimal(nb1).multiply(new BigDecimal(nb2)));
-		System.out.println(new BigDecimal(nb1).divide(new BigDecimal(nb2),1));
-		//System.out.println(new BigDecimal(nb1).subtract(new BigDecimal(nb2)));
+		System.out.println(nb1 + " / " + nb2 + " = " + (Float.parseFloat(nb1) / Float.parseFloat(nb2)));
+		System.out.println(nb1 + " % " + nb2 + " = " + (Integer.parseInt(nb1) % Integer.parseInt(nb2)));
 		sc.close();
 
 	}
