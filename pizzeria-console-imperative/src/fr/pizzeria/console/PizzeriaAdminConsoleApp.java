@@ -8,21 +8,21 @@ public class PizzeriaAdminConsoleApp {
 	
 	public static void main(String[] args) {
 		String Pizzas[][] = {
-				{"PEP","Pépéroni","12.50"},
-				{"MAR","Margherita","14.00"},
-				{"REI","La Reine","11.50"},
-				{"FRO","La 4 fromages","12.00"},
-				{"CAN","La cannibale","12.50"},
-				{"SAV","La savoyarde","13.00"},
-				{"ORI","L’orientale","13.50"},
-				{"IND","L’indienne","14.00"}};
+				{"0","PEP","Pépéroni","12.50"},
+				{"1","MAR","Margherita","14.00"},
+				{"2","REI","La Reine","11.50"},
+				{"3","FRO","La 4 fromages","12.00"},
+				{"4","CAN","La cannibale","12.50"},
+				{"5","SAV","La savoyarde","13.00"},
+				{"6","ORI","L’orientale","13.50"},
+				{"7","IND","L’indienne","14.00"}};
 		affichageOption();
 		String choice = sc.next();
 		while(choice.equals("99")!=true){
 			switch(choice){
 			case "1":
 				for(int i=0;i<Pizzas.length;i++){
-					for(int j=0;j<3;j++){
+					for(int j=1;j<4;j++){
 						System.out.print(Pizzas[i][j] + " ");
 					}
 					System.out.println("");
@@ -36,15 +36,17 @@ public class PizzeriaAdminConsoleApp {
 				String nom = sc.next();
 				System.out.println("Prix de la Pizza");
 				String prix = sc.next();
-				String Etape[][]=new String[(Pizzas.length)+1][3];
+				String Etape[][]=new String[(Pizzas.length)+1][4];
 				for(int i=0;i<Pizzas.length;i++){
 					Etape[i][0] = Pizzas[i][0];
 					Etape[i][1] = Pizzas[i][1];
 					Etape[i][2] = Pizzas[i][2];
+					Etape[i][3] = Pizzas[i][3];
 				}
-				Etape[Pizzas.length][0] = code;
-				Etape[Pizzas.length][1] = nom;
-				Etape[Pizzas.length][2] = prix;
+				Etape[Pizzas.length][0] = String.valueOf(Pizzas.length);
+				Etape[Pizzas.length][1] = code;
+				Etape[Pizzas.length][2] = nom;
+				Etape[Pizzas.length][3] = prix;
 				Pizzas=Etape;
 				break;
 			case "3":
@@ -58,31 +60,38 @@ public class PizzeriaAdminConsoleApp {
 				System.out.println("Nouveau Prix de la Pizza");
 				String prixU = sc.next();
 				for(int i=0;i<Pizzas.length;i++){
-						if((Pizzas[i][0]).equals(id)==true){
-							Pizzas[i][0]=codeU;
-							Pizzas[i][1]=nomU;
-							Pizzas[i][2]=prixU;
-							break;
+						if((Pizzas[i][1]).equals(id)==true){
+							Pizzas[i][1]=codeU;
+							Pizzas[i][2]=nomU;
+							Pizzas[i][3]=prixU;
 						} 
 					}
 				break;
 			case "4":
 				System.out.println("Supprimer votre Pizza");
-				System.out.println("Id de la Pizza");
-				int idS = sc.nextInt();
-				String EtapeS[][]=new String[(Pizzas.length)-1][3];
+				System.out.println("Code de la Pizza que vous voulez supprimer");
+				String idS = sc.next();
+				int j = 0;
 				for(int i=0;i<Pizzas.length;i++){
-					if(i<=idS){
-						EtapeS[i][0] = Pizzas[i][0];
-						EtapeS[i][1] = Pizzas[i][1];
-						EtapeS[i][2] = Pizzas[i][2];
-					}
-					else{
-						EtapeS[i-1][0] = Pizzas[i][0];
-						EtapeS[i-1][1] = Pizzas[i][1];
-						EtapeS[i-1][2] = Pizzas[i][2];	
+					if((Pizzas[i][1]).equals(idS)==true){
+						 j = i;
 					}
 				}
+				String EtapeS[][]=new String[(Pizzas.length)-1][4];
+				for(int k=0;k<Pizzas.length;k++){
+					if(k<=j){
+						EtapeS[k][0] = Pizzas[k][0];
+						EtapeS[k][1] = Pizzas[k][1];
+						EtapeS[k][2] = Pizzas[k][2];
+						EtapeS[k][3] = Pizzas[k][3];
+					}else{
+						EtapeS[k-1][0] = Pizzas[k][0];
+						EtapeS[k-1][1] = Pizzas[k][1];
+						EtapeS[k-1][2] = Pizzas[k][2];	
+						EtapeS[k-1][3] = Pizzas[k][3];
+					}
+				}
+				
 				Pizzas=EtapeS;
 				break;
 			default:
