@@ -22,7 +22,7 @@ public class PizzeriaAdminConsoleApp {
 			switch(choice){
 			case "1":
 				for(int i=0;i<Pizzas.length;i++){
-					for(int j=0;j<4;j++){
+					for(int j=1;j<4;j++){
 						System.out.print(Pizzas[i][j] + " ");
 					}
 					System.out.println("");
@@ -80,11 +80,13 @@ public class PizzeriaAdminConsoleApp {
 				}
 				String EtapeS[][]=new String[(Pizzas.length)-1][4];
 				for(int k=0;k<Pizzas.length;k++){
-					if(k<=j){
+					if(k<j){
 						EtapeS[k][0] = Pizzas[k][0];
 						EtapeS[k][1] = Pizzas[k][1];
 						EtapeS[k][2] = Pizzas[k][2];
 						EtapeS[k][3] = Pizzas[k][3];
+					}else if(k==j){
+						
 					}else{
 						EtapeS[k-1][0] = Pizzas[k][0];
 						EtapeS[k-1][1] = Pizzas[k][1];
