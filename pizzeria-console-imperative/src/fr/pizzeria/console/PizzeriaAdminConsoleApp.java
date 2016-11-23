@@ -17,10 +17,10 @@ public class PizzeriaAdminConsoleApp {
 				{"ORI","L’orientale","13.50"},
 				{"IND","L’indienne","14.00"}};
 		affichageOption();
-		int choice = sc.nextInt();
-		do{
+		String choice = sc.next();
+		while(choice.equals("99")!=true){
 			switch(choice){
-			case 1:
+			case "1":
 				for(int i=0;i<Pizzas.length;i++){
 					for(int j=0;j<3;j++){
 						if(Pizzas[i][j]!=""){
@@ -30,7 +30,7 @@ public class PizzeriaAdminConsoleApp {
 					System.out.println("");
 				}
 				break;
-			case 2:
+			case "2":
 				System.out.println("Créez votre Pizza");
 				System.out.println("Code de la Pizza");
 				String code = sc.next();
@@ -49,7 +49,7 @@ public class PizzeriaAdminConsoleApp {
 				Etape[Pizzas.length][2] = prix;
 				Pizzas=Etape;
 				break;
-			case 3:
+			case "3":
 				System.out.println("Modifiez votre Pizza");
 				System.out.println("Id de la Pizza");
 				int id = sc.nextInt();
@@ -63,7 +63,7 @@ public class PizzeriaAdminConsoleApp {
 				Pizzas[id][1]=nomU;
 				Pizzas[id][2]=prixU;
 				break;
-			case 4:
+			case "4":
 				System.out.println("Supprimer votre Pizza");
 				System.out.println("Id de la Pizza");
 				int idS = sc.nextInt();
@@ -82,15 +82,15 @@ public class PizzeriaAdminConsoleApp {
 				}
 				Pizzas=EtapeS;
 				break;
-			case 99:
+			case "99":
 				System.out.println("Au revoir");
 				break;
 			default:
 				break;
 			}
 			affichageOption();
-			choice = sc.nextInt();
-		} while(choice!=99);
+			choice = sc.next();
+		} //while(choice.equals("99")!=true);
 
 	}
 	public static void affichageOption(){
