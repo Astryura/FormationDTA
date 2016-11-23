@@ -43,7 +43,7 @@ public class PizzeriaAdminConsoleApp {
 					Etape[i][2] = Pizzas[i][2];
 					Etape[i][3] = Pizzas[i][3];
 				}
-				Etape[Pizzas.length][0] = String.valueOf(Pizzas.length);
+				Etape[Pizzas.length][0] = String.valueOf((Pizzas[Pizzas.length][0])+1);
 				Etape[Pizzas.length][1] = code;
 				Etape[Pizzas.length][2] = nom;
 				Etape[Pizzas.length][3] = prix;
