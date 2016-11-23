@@ -49,17 +49,22 @@ public class PizzeriaAdminConsoleApp {
 				break;
 			case "3":
 				System.out.println("Modifiez votre Pizza");
-				System.out.println("Id de la Pizza");
-				int id = sc.nextInt();
+				System.out.println("Code de la Pizza que vous voulez modifier");
+				String id = sc.next();
 				System.out.println("Nouveau Code de la Pizza");
 				String codeU = sc.next();
 				System.out.println("Nouveau Nom de la Pizza");
 				String nomU = sc.next();
 				System.out.println("Nouveau Prix de la Pizza");
 				String prixU = sc.next();
-				Pizzas[id][0]=codeU;
-				Pizzas[id][1]=nomU;
-				Pizzas[id][2]=prixU;
+				for(int i=0;i<Pizzas.length;i++){
+						if((Pizzas[i][0]).equals(id)==true){
+							Pizzas[i][0]=codeU;
+							Pizzas[i][1]=nomU;
+							Pizzas[i][2]=prixU;
+							break;
+						} 
+					}
 				break;
 			case "4":
 				System.out.println("Supprimer votre Pizza");
