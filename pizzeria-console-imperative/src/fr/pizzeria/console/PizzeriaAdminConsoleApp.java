@@ -23,9 +23,7 @@ public class PizzeriaAdminConsoleApp {
 			case "1":
 				for(int i=0;i<Pizzas.length;i++){
 					for(int j=0;j<3;j++){
-						if(Pizzas[i][j]!=""){
 						System.out.print(Pizzas[i][j] + " ");
-						}
 					}
 					System.out.println("");
 				}
