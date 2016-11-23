@@ -22,7 +22,7 @@ public class PizzeriaAdminConsoleApp {
 			switch(choice){
 			case "1":
 				for(int i=0;i<Pizzas.length;i++){
-					for(int j=1;j<4;j++){
+					for(int j=0;j<4;j++){
 						System.out.print(Pizzas[i][j] + " ");
 					}
 					System.out.println("");
@@ -43,7 +43,8 @@ public class PizzeriaAdminConsoleApp {
 					Etape[i][2] = Pizzas[i][2];
 					Etape[i][3] = Pizzas[i][3];
 				}
-				Etape[Pizzas.length][0] = String.valueOf((Pizzas[Pizzas.length][0])+1);
+				int idF =  Integer.parseInt(Pizzas[(Pizzas.length)-1][0])+1;
+				Etape[Pizzas.length][0] = String.valueOf(idF);
 				Etape[Pizzas.length][1] = code;
 				Etape[Pizzas.length][2] = nom;
 				Etape[Pizzas.length][3] = prix;
