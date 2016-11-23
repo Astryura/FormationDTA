@@ -82,9 +82,6 @@ public class PizzeriaAdminConsoleApp {
 				}
 				Pizzas=EtapeS;
 				break;
-			case "99":
-				System.out.println("Au revoir");
-				break;
 			default:
 				break;
 			}
