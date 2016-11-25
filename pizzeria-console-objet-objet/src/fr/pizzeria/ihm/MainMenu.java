@@ -25,12 +25,13 @@ public class MainMenu {
 		parseAndExec();
 	}
 
-	public void parseAndExec() {
+	private void parseAndExec() {
 		String input = ihmUtil.getScanner().next();
 
 		if (Integer.parseInt(input) <= 4){
 			this.menu[Integer.parseInt(input) - 1].doAction();
-			displayMenu();}
+			displayMenu();
+			}
 		else if (Integer.parseInt(input) == 99) {
 			this.menu[4].doAction();
 		}
