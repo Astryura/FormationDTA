@@ -29,7 +29,7 @@ public class PizzeriaAdminConsoleApp {
 			switch(choice){
 				case "1":
 					for(int i=0;i<Pizzas.length;i++){
-							System.out.println(Pizzas[i].getCode() + " "+Pizzas[i].getNom() +" "+Pizzas[i].getPrix() );
+							System.out.println(Pizzas[i].getCode() + " " + Pizzas[i].getNom() + " " + Pizzas[i].getPrix());
 					}
 					System.out.println(Pizza.getNbPizzas()+" pizzas créées depuis l’initialisation du programme");
 					break;
